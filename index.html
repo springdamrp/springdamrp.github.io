@@ -6,124 +6,218 @@
   <title>Springdam Roleplay</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
-      margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #0e0e1a;
       color: #f0f0f0;
+      background: url('ChatGPT Image Jul 17, 2025, 02_49_23 AM.png') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
     }
+
     header {
-      background-color: #1e1e2e;
-      padding: 40px;
+      background-color: rgba(14,14,26,0.8);
+      padding: 50px 20px;
       text-align: center;
+      animation: fadeInDown 1s ease;
     }
+
     header h1 {
-      margin: 0;
       font-size: 3rem;
     }
+
+    header p {
+      margin-top: 10px;
+      color: #aaa;
+    }
+
     nav {
-      background-color: #161622;
+      background-color: rgba(22,22,34,0.95);
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
+      gap: 35px;
       padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      animation: slideDown 1s ease;
     }
+
     nav a {
-      color: #ffffff;
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
+      transition: color 0.3s;
     }
+
     nav a:hover {
-      color: #00aaff;
+      color: #00ccff;
     }
-    .hero {
-      background-color: #0e0e1a;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .hero img {
-      max-height: 280px;
-      width: auto;
-      margin-bottom: 20px;
-    }
-    .hero h2 {
-      font-size: 2.6rem;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-    }
+
     .section {
       max-width: 1200px;
       margin: auto;
       padding: 60px 20px;
+      background-color: rgba(30,30,46,0.9);
+      margin-bottom: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      animation: fadeInUp 1s ease;
+      transition: transform 0.3s ease;
     }
+
+    .section:hover {
+      transform: scale(1.02);
+    }
+
     .section h2 {
-      color: #00aaff;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
+      color: #00ccff;
+      margin-bottom: 25px;
+      text-align: center;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background-color: rgba(14,14,26,0.7);
+      animation: zoomIn 1.2s ease;
+    }
+
+    .hero img {
+      max-height: 250px;
+      margin-bottom: 20px;
+      animation: bounceIn 2s ease;
+    }
+
+    .hero h2 {
+      font-size: 2.6rem;
+    }
+
     .card-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
+
     .card {
       background-color: #1f1f2f;
-      padding: 30px;
+      padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      transition: transform 0.2s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 1s ease;
     }
+
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
     }
+
     .card img {
-      width: 40px;
-      vertical-align: middle;
-      margin-right: 10px;
+      height: 40px;
+      margin-bottom: 10px;
     }
+
+    .card strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
     .card a {
       display: inline-block;
       margin-top: 10px;
       padding: 10px 20px;
       background-color: #00aaff;
-      color: white;
+      color: #fff;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
+      transition: background-color 0.3s;
     }
+
     .card a:hover {
       background-color: #0088cc;
     }
+
     .discord-links ul {
       list-style: none;
       padding: 0;
+      text-align: center;
     }
+
     .discord-links li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
     }
+
     .discord-links a {
-      color: #00aaff;
+      color: #00ccff;
+      font-weight: bold;
       text-decoration: none;
     }
+
     .discord-links a:hover {
       text-decoration: underline;
     }
+
+    #fivem-soon {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: rgba(14, 14, 26, 0.85);
+      color: #fff;
+      animation: fadeIn 1.5s ease;
+    }
+
+    #fivem-soon h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #00ccff;
+    }
+
     footer {
       background-color: #111;
       color: #888;
       text-align: center;
-      padding: 20px;
+      padding: 25px 15px;
     }
-    .footer-logo img {
-      height: 28px;
-      border-radius: 6px;
-      margin-top: 10px;
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
-    .footer-hoodie img {
-      max-height: 150px;
-      margin-top: 15px;
-      border-radius: 10px;
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes bounceIn {
+      0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: ease-in-out;
+      }
+      0% {transform: scale(0.3); opacity: 0;}
+      50% {transform: scale(1.05); opacity: 1;}
+      70% {transform: scale(0.9);}
+      100% {transform: scale(1);}
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -134,83 +228,90 @@
   </header>
 
   <nav>
-    <a href="#">Home</a>
-    <a href="#regels">APV / Regels</a>
+    <a href="#hero">Home</a>
+    <a href="#regels">APV</a>
     <a href="#sollicitaties">Solliciteren</a>
     <a href="#discords">Discords</a>
-    <a href="#staff">Staff Team</a>
+    <a href="#staff">Staff</a>
+    <a href="#store">Store</a>
+    <a href="#fivem-soon">Join FiveM</a>
   </nav>
 
-  <div class="hero">
-    <img src="srp.webp" alt="Springdam Logo">
-    <h2>Welkom in Springdam RP</h2>
-  </div>
+<!-- Over Springdam -->
+<div class="section">
+  <h2>Over Springdam</h2>
+  <p>
+    🎉 Welkom in Springdam – Jouw verhaal begint hier! 🏙️<br><br>
+    Stap binnen in Springdam, een levendige roleplay-stad waar elke keuze telt en jouw karakter het verschil maakt. Of je nu droomt van een carrière als agent, arts, ondernemer, of juist liever de schimmige onderwereld induikt – in Springdam is alles mogelijk.<br><br>
+    🚓 Realistische banen & economie<br>
+    🏘️ Woningen, winkels en voertuigen te koop<br>
+    🧑‍🤝‍🧑 Actieve community & goed beheer<br>
+    🎭 Unieke verhalen en diepgaande RP<br><br>
+    Of je nu een doorgewinterde roleplayer bent of net begint, Springdam biedt de perfecte balans tussen vrijheid en structuur. Onze stad draait om beleving, interactie en samen verhalen schrijven.<br><br>
+    🔗 Sluit je aan en begin jouw leven in Springdam vandaag nog!
+  </p>
+</div>
 
-  <div class="section">
-    <h2>Over Springdam</h2>
-    <p>
-      🎉 Welkom in Springdam – Jouw verhaal begint hier! 🏙️<br><br>
-      Stap binnen in Springdam, een levendige roleplay-stad waar elke keuze telt en jouw karakter het verschil maakt. Of je nu droomt van een carrière als agent, arts, ondernemer, of juist liever de schimmige onderwereld induikt – in Springdam is alles mogelijk.<br><br>
-      🚓 Realistische banen & economie<br>
-      🏘️ Woningen, winkels en voertuigen te koop<br>
-      🧑‍🤝‍🧑 Actieve community & goed beheer<br>
-      🎭 Unieke verhalen en diepgaande RP<br><br>
-      Of je nu een doorgewinterde roleplayer bent of net begint, Springdam biedt de perfecte balans tussen vrijheid en structuur. Onze stad draait om beleving, interactie en samen verhalen schrijven.<br><br>
-      🔗 Sluit je aan en begin jouw leven in Springdam vandaag nog!
-    </p>
-  </div>
+<!-- APV / Regels -->
+<div class="section" id="regels">
+  <h2>📜 APV / Regels</h2>
+  <p>Lees de volledige regels van Springdam via deze link:<br>
+  <a href="https://docs.google.com/document/d/1SLi_lUfo8YDmtOm-1dwQ3rdzrKlQW_qSicNEYhatXt8/edit" target="_blank">Bekijk hier de APV en regelgeving</a></p>
+</div>
 
-  <div class="section" id="regels">
-    <h2>📜 APV / Regels</h2>
-    <p>Lees de volledige regels van Springdam via deze link:<br>
-    <a href="https://docs.google.com/document/d/1SLi_lUfo8YDmtOm-1dwQ3rdzrKlQW_qSicNEYhatXt8/edit" target="_blank">Bekijk hier de APV en regelgeving</a></p>
+<!-- Sollicitaties -->
+<div class="section" id="sollicitaties">
+  <h2>🚨 Sollicitaties Hulpdiensten</h2>
+  <div class="card-grid">
+    <div class="card"><img src="politie.png" alt="Politie"><strong>Politie</strong><p>Bescherm de stad, handhaaf de orde en word onderdeel van de wet.</p><a href="https://docs.google.com/forms/d/13j9bFmUXb9DaMr3msSke8UeCUMw6o8HgO2U8_gBCToE/viewform" target="_blank">Solliciteer</a></div>
+    <div class="card"><img src="Embleem_Koninklijke_Marechaussee.svg" alt="KMar"><strong>KMar</strong><p>Verantwoordelijk voor grensbewaking en bijzondere taken in Springdam.</p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeNsK8ISxE9kprTFAPGfeRLzw0I1zHyjz4gq83T6QBFDDQ9TA/viewform" target="_blank">Solliciteer</a></div>
+    <div class="card"><img src="ambu.png" alt="Ambulance"><strong>Ambulance</strong><p>Red levens en bied medische hulp als onderdeel van de ambulancedienst.</p><a href="https://docs.google.com/forms/d/1RDu1C2aHNYv0GrAHNmSZ0nTuA-IjmGsdTjFj6gr0lMo/edit?pli=1" target="_blank">Solliciteer</a></div>
+    <div class="card"><img src="anwb.jpeg" alt="ANWB"><strong>ANWB</strong><p>Help mensen met pech onderweg en zorg voor mobiliteit.</p><a href="https://docs.google.com/forms/d/108eBGSCO5BmNuow_p2nlQulUX79mi2nYaVL1rcMAhiY/edit" target="_blank">Solliciteer</a></div>
+    <div class="card"><img src="il_570xN.1905578420_j30e.avif" alt="Advocaat"><strong>Advocaat</strong><p>Sta mensen juridisch bij en zorg voor rechtvaardigheid.</p><a href="https://docs.google.com/forms/d/1e41-murHyWbpxXGhDhuz3jxPSPQOkU6G6Wv1FKQenFM/edit" target="_blank">Solliciteer</a></div>
   </div>
+</div>
 
-  <div class="section" id="sollicitaties">
-    <h2>🚨 Sollicitaties Hulpdiensten</h2>
-    <div class="card-grid">
-      <div class="card"><img src="politie.png" alt="Politie"><strong>Politie</strong><p>Bescherm de stad, handhaaf de orde en word onderdeel van de wet.</p><a href="https://docs.google.com/forms/d/13j9bFmUXb9DaMr3msSke8UeCUMw6o8HgO2U8_gBCToE/viewform" target="_blank">Solliciteer</a></div>
-      <div class="card"><img src="Embleem_Koninklijke_Marechaussee.svg" alt="KMar"><strong>KMar</strong><p>Verantwoordelijk voor grensbewaking en bijzondere taken in Springdam.</p><a href="https://docs.google.com/forms/d/e/1FAIpQLSeNsK8ISxE9kprTFAPGfeRLzw0I1zHyjz4gq83T6QBFDDQ9TA/viewform" target="_blank">Solliciteer</a></div>
-      <div class="card"><img src="ambu.png" alt="Ambulance"><strong>Ambulance</strong><p>Red levens en bied medische hulp als onderdeel van de ambulancedienst.</p><a href="https://docs.google.com/forms/d/1RDu1C2aHNYv0GrAHNmSZ0nTuA-IjmGsdTjFj6gr0lMo/edit?pli=1" target="_blank">Solliciteer</a></div>
-      <div class="card"><img src="anwb.jpeg" alt="ANWB"><strong>ANWB</strong><p>Help mensen met pech onderweg en zorg voor mobiliteit.</p><a href="https://docs.google.com/forms/d/108eBGSCO5BmNuow_p2nlQulUX79mi2nYaVL1rcMAhiY/edit" target="_blank">Solliciteer</a></div>
-      <div class="card"><img src="il_570xN.1905578420_j30e.avif" alt="Advocaat"><strong>Advocaat</strong><p>Sta mensen juridisch bij en zorg voor rechtvaardigheid.</p><a href="https://docs.google.com/forms/d/1e41-murHyWbpxXGhDhuz3jxPSPQOkU6G6Wv1FKQenFM/edit" target="_blank">Solliciteer</a></div>
-    </div>
+<!-- Discords -->
+<div class="section" id="discords">
+  <h2>💬 Discords</h2>
+  <ul>
+    <li><strong>Main Discord:</strong> <a href="https://discord.gg/gB74pYPWpM" target="_blank">springdam.gg/main</a></li>
+    <li><strong>Support Discord:</strong> <a href="https://discord.com/invite/C46KBg9SeP" target="_blank">springdam.gg/support</a></li>
+    <li><strong>Onderwereld Discord:</strong> <a href="https://discord.gg/D8g3nYX3ZF" target="_blank">springdam.gg/onderwereld</a></li>
+  </ul>
+</div>
+
+<!-- Staff Team -->
+<div class="section" id="staff">
+  <h2>👑 Staff Team</h2>
+  <div class="card-grid">
+    <div class="card"><img src="lencio.webp" alt="Lencio"><strong>[SRP] Lencio</strong><p>Supervisor</p></div>
+    <div class="card"><img src="rein.webp" alt="Rein"><strong>[SRP] ! Rein</strong><p>Mede Bestuur / Developer</p></div>
+    <div class="card"><img src="Wesley.webp" alt="Wesley"><strong>[SRP] Wesley</strong><p>Mede Bestuur</p></div>
+    <div class="card"><img src="brian.webp" alt="Brian"><strong>[SRP] Brian</strong><p>Mede Bestuur</p></div>
+    <div class="card"><img src="vincent.webp" alt="Vincent"><strong>[SRP] Vincent</strong><p>Mede Bestuur</p></div>
+    <div class="card"><img src="corseved.webp" alt="Corseved"><strong>Corseved</strong><p>Bestuur</p></div>
+    <div class="card"><img src="cozz.webp" alt="Cozz"><strong>Cozz</strong><p>Bestuur</p></div>
   </div>
+</div>
 
-  <div class="section" id="discords">
-    <h2>💬 Discords</h2>
-    <div class="discord-links">
-      <ul>
-        <li><strong>Main Discord:</strong> <a href="https://discord.gg/gB74pYPWpM" target="_blank">springdam.gg/main</a></li>
-        <li><strong>Support Discord:</strong> <a href="https://discord.com/invite/C46KBg9SeP" target="_blank">springdam.gg/support</a></li>
-        <li><strong>Onderwereld Discord:</strong> <a href="https://discord.gg/D8g3nYX3ZF" target="_blank">springdam.gg/onderwereld</a></li>
-      </ul>
-    </div>
+<!-- Store (coming soon) -->
+<div class="section" id="store">
+  <h2>🛒 Store (Coming Soon)</h2>
+  <p>We zijn druk bezig met de ontwikkeling van onze officiële Springdam webwinkel. Binnenkort kun je hier exclusieve SRP-merchandise en diensten kopen. Stay tuned!</p>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Springdam Roleplay | Gemaakt door ! Rein</p>
+  <a href="https://discordapp.com/users/589959998067572739" target="_blank">
+    <img src="6a43f438-fb80-469c-8c33-1d95f43ebb53.png" alt="" height="28">
+  </a>
+</footer>
+
+
+  <!-- Join FiveM Soon Section -->
+  <div id="fivem-soon">
+    <h2>Join FiveM - Coming Soon</h2>
+    <p>We zijn druk bezig om onze officiële Springdam FiveM-server te lanceren. Houd deze pagina in de gaten voor updates en releasedata!</p>
   </div>
-
-  <div class="section" id="staff">
-    <h2>👑 Staff Team</h2>
-    <div class="card-grid">
-<div class="card"><img src="lencio.webp" alt="Lencio"><strong>[SRP] Lencio</strong><p>Supervisor</p></div>
-<div class="card"><img src="rein.webp" alt="Rein"><strong>[SRP] ! Rein</strong><p>Mede Bestuur / Developer</p></div>
-      <div class="card"><img src="Wesley.webp" alt="Wesley"><strong>[SRP] Wesley</strong><p>Mede Bestuur</p></div>
-      <div class="card"><img src="brian.webp" alt="Brian"><strong>[SRP] Brian</strong><p>Mede Bestuur</p></div>
-      <div class="card"><img src="vincent.webp" alt="Vincent"><strong>[SRP] Vincent</strong><p>Mede Bestuur</p></div>
-      <div class="card"><img src="corseved.webp" alt="Corseved"><strong>Corseved</strong><p>Bestuur</p></div>
-      <div class="card"><img src="cozz.webp" alt="Cozz"><strong>Cozz</strong><p>Bestuur</p></div>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Springdam Roleplay | Gemaakt door ! Rein</p>
-    <div class="footer-logo">
-      <a href="https://discordapp.com/users/589959998067572739" target="_blank">
-        <img src="6a43f438-fb80-469c-8c33-1d95f43ebb53.png" alt="">
-      </a>
-    </div>
-    <div class="footer-hoodie">
-      <img src="rein.webp" alt="Hoodie Rein">
-    </div>
-  </footer>
-</body>
-</html>
